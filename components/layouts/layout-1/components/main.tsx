@@ -4,6 +4,7 @@ import { useLayout } from './context';
 import { Footer } from './footer';
 import { Header } from './header';
 import { Sidebar } from './sidebar';
+import { StatusBar } from './status-bar';
 
 export function Main({ children }: { children: React.ReactNode }) {
   const isMobile = useIsMobile();
@@ -54,6 +55,7 @@ export function Main({ children }: { children: React.ReactNode }) {
         </main>
 
         <Footer />
+        <StatusBar />
       </div>
     </>
   );
