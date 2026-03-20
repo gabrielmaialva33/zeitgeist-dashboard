@@ -111,9 +111,14 @@ export function Header() {
           </div>
         </div>
 
-        {/* Mega Menu */}
+        {/* Intelligence Workbench title — desktop only */}
         {!mobileMode && (
-          <MegaMenu />
+          <div className="flex items-center gap-4">
+            <span className="text-sm font-medium text-muted-foreground tracking-wide select-none">
+              Intelligence Workbench
+            </span>
+            <MegaMenu />
+          </div>
         )}
 
         {/* HeaderTopbar */}
@@ -123,25 +128,31 @@ export function Header() {
               trigger={
                 <Button
                   variant="ghost"
-                  mode="icon"
                   shape="circle"
-                  className="size-9 hover:bg-primary/10 hover:[&_svg]:text-primary"
+                  className="h-9 px-3 gap-2 text-muted-foreground hover:bg-primary/10 hover:text-primary hover:[&_svg]:text-primary"
                 >
-                  <Search className="size-4.5!" />
+                  <Search className="size-4!" />
+                  <span className="text-xs hidden xl:inline">Search</span>
+                  <kbd className="hidden xl:inline-flex items-center gap-0.5 rounded border border-border bg-muted px-1.5 py-0.5 text-[10px] font-mono text-muted-foreground">
+                    ⌘K
+                  </kbd>
                 </Button>
               }
             />
           )}
           <NotificationsSheet
             trigger={
-              <Button
-                variant="ghost"
-                mode="icon"
-                shape="circle"
-                className="size-9 hover:bg-primary/10 hover:[&_svg]:text-primary"
-              >
-                <Bell className="size-4.5!" />
-              </Button>
+              <div className="relative">
+                <Button
+                  variant="ghost"
+                  mode="icon"
+                  shape="circle"
+                  className="size-9 hover:bg-primary/10 hover:[&_svg]:text-primary"
+                >
+                  <Bell className="size-4.5!" />
+                </Button>
+                <span className="absolute top-1 end-1 size-2 rounded-full bg-red-500 ring-1 ring-background pointer-events-none" />
+              </div>
             }
           />
           <ChatSheet
