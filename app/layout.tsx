@@ -11,8 +11,8 @@ const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: {
-    template: '%s | Metronic',
-    default: 'Metronic', // a default is required when creating a template
+    template: '%s | Zeitgeist',
+    default: 'Zeitgeist Intelligence Dashboard',
   },
 };
 
@@ -22,7 +22,7 @@ export default async function RootLayout({
   children: ReactNode;
 }) {
   return (
-    <html className="h-full" suppressHydrationWarning>
+    <html className="h-full dark" suppressHydrationWarning>
       <body
         className={cn(
           'antialiased flex h-full text-base text-foreground bg-background',
@@ -31,9 +31,10 @@ export default async function RootLayout({
       >
         <ThemeProvider
           attribute="class"
-          defaultTheme="system"
-          storageKey="nextjs-theme"
-          enableSystem
+          defaultTheme="dark"
+          forcedTheme="dark"
+          enableSystem={false}
+          storageKey="zeitgeist-theme"
           disableTransitionOnChange
           enableColorScheme
         >

@@ -6,60 +6,50 @@
 /** Dark Mode Variant **/
 @custom-variant dark (&:is(.dark *));
 
-/** Colors - https://tailwindcss.com/docs/colors **/
+/** Colors — Zeitgeist dark-only intelligence theme **/
 :root {
-  --background: var(--color-white);
-  --foreground: var(--color-zinc-950);
-  --card: var(--color-white);
-  --card-foreground: var(--color-zinc-950);
-  --popover: var(--color-white);
-  --popover-foreground: var(--color-zinc-950);
-  --primary: var(--color-zinc-900);
-  --primary-foreground: var(--color-white);
-  --secondary: var(--color-zinc-100);
-  --secondary-foreground: var(--color-zinc-900);
-  --muted: var(--color-zinc-100);
-  --muted-foreground: var(--color-zinc-500);
-  --accent: var(--color-zinc-100);
-  --accent-foreground: var(--color-zinc-900);
-  --destructive: var(--color-red-600);
-  --destructive-foreground: var(--color-white);
-  --chart-1: var(--color-blue-500);
-  --chart-2: var(--color-green-500);
-  --chart-3: var(--color-yellow-500);
-  --chart-4: var(--color-red-500);
-  --chart-5: var(--color-purple-500);
-  --border: oklch(94% 0.004 286.32); /* between --color-zinc-100 and --color-zinc-200 */
-  --input: var(--color-zinc-200);
-  --ring: var(--color-zinc-400);
-  --radius: 0.5rem;
-}
+  /* Base — dark navy */
+  --background: oklch(13% 0.025 248);   /* #0a0f1a */
+  --foreground: oklch(98% 0.005 248);   /* #f9fafb */
+  --card: oklch(16% 0.025 248);         /* #111827 */
+  --card-foreground: oklch(98% 0.005 248);
+  --popover: oklch(16% 0.025 248);
+  --popover-foreground: oklch(98% 0.005 248);
 
-.dark {
-  --background: var(--color-zinc-950);
-  --foreground: var(--color-zinc-50);
-  --card: var(--color-zinc-950);
-  --card-foreground: var(--color-zinc-50);
-  --popover: var(--color-zinc-950);
-  --popover-foreground: var(--color-zinc-50);
-  --primary: var(--color-zinc-300);
-  --primary-foreground: var(--color-zinc-950);
-  --secondary: var(--color-zinc-800);
-  --secondary-foreground: var(--color-zinc-50);
-  --muted: var(--color-zinc-900);
-  --muted-foreground: var(--color-zinc-500);
-  --accent: var(--color-zinc-900);
-  --accent-foreground: var(--color-zinc-50);
-  --destructive: var(--color-red-600);
-  --destructive-foreground: var(--color-white);
+  /* Brand — Zeitgeist red accent */
+  --primary: oklch(58% 0.22 15);        /* #e94560 */
+  --primary-foreground: oklch(98% 0.005 248);
+  --secondary: oklch(22% 0.025 248);    /* #1f2937 */
+  --secondary-foreground: oklch(98% 0.005 248);
+
+  /* Muted / Accent */
+  --muted: oklch(19% 0.020 248);
+  --muted-foreground: oklch(55% 0.015 248);
+  --accent: oklch(20% 0.022 248);
+  --accent-foreground: oklch(98% 0.005 248);
+
+  /* Destructive */
+  --destructive: oklch(60% 0.21 27);    /* #ef4444 */
+  --destructive-foreground: oklch(98% 0.005 248);
+
+  /* Severity tokens */
+  --critical: oklch(60% 0.21 27);       /* #ef4444 */
+  --elevated: oklch(72% 0.18 65);       /* #f59e0b */
+  --normal: oklch(65% 0.20 145);        /* #22c55e */
+  --info: oklch(62% 0.18 210);          /* #0ea5e9 */
+
+  /* Charts */
   --chart-1: var(--color-blue-500);
-  --chart-2: var(--color-green-500);
-  --chart-3: var(--color-yellow-500);
+  --chart-2: var(--color-emerald-500);
+  --chart-3: var(--color-amber-500);
   --chart-4: var(--color-red-500);
-  --chart-5: var(--color-purple-500);
-  --border: var(--color-zinc-800);
-  --input: var(--color-zinc-800);
-  --ring: var(--color-zinc-600);
+  --chart-5: var(--color-violet-500);
+
+  /* Borders / inputs */
+  --border: oklch(22% 0.025 248);
+  --input: oklch(22% 0.025 248);
+  --ring: oklch(58% 0.22 15);
+  --radius: 0.5rem;
 }
 
 /** Theme Setup **/
@@ -81,6 +71,12 @@
   --color-secondary-foreground: var(--secondary-foreground);
   --color-destructive: var(--destructive);
   --color-destructive-foreground: var(--destructive-foreground);
+
+  /** Severity tokens **/
+  --color-critical: var(--critical);
+  --color-elevated: var(--elevated);
+  --color-normal: var(--normal);
+  --color-info: var(--info);
 
   /** Base Styles **/
   --color-border: var(--border);
