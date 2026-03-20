@@ -1,7 +1,7 @@
 'use client';
 
 import { JSX, useCallback } from 'react';
-import { MENU_SIDEBAR } from '@/config/layout-1.config';
+import { ZEITGEIST_SIDEBAR } from '@/config/zeitgeist.config';
 import { MenuConfig, MenuItem } from '@/config/types';
 import { cn } from '@/lib/utils';
 import {
@@ -25,7 +25,7 @@ export function SidebarMenu() {
   // Memoize matchPath to prevent unnecessary re-renders
   const matchPath = useCallback(
     (path: string): boolean =>
-      path === pathname || (path.length > 1 && pathname.startsWith(path) && path !== '/layout-1'),
+      path === pathname || (path.length > 1 && pathname.startsWith(path)),
     [pathname],
   );
 
@@ -220,7 +220,7 @@ export function SidebarMenu() {
         collapsible
         classNames={classNames}
       >
-        {buildMenu(MENU_SIDEBAR)}
+        {buildMenu(ZEITGEIST_SIDEBAR)}
       </AccordionMenu>
     </ScrollArea>
   );
