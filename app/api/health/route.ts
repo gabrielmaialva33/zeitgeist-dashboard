@@ -5,7 +5,8 @@ export async function GET() {
     {
       status: 'ok',
       timestamp: new Date().toISOString(),
-      service: 'metronic-react-starter-kit',
+      service: 'zeitgeist-dashboard',
+      version: '0.1.0',
     },
     { status: 200 }
   );
